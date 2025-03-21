@@ -1,12 +1,7 @@
-name: 1080p Quality
-description: "1080p Quality utilizes the [**Golden Popcorn Performance Index**](https://dictionarry.dev/wiki/GPPi)\
-  \ to target **transparent** x264 1080p encodes. \n- 5 Quality tiers prioritise encodes\
-  \ with high 1080p GPPi scores, with fallback to 1080p WEB-DLs and streaming optimised\
-  \ encodes (**BHDStudio & hallowed**).\n- If no 1080p release can be found, the profile\
-  \ will fall back to SD releases - **DVD remuxes  / encodes**"
+name: 1080p - No 4K
+description: prioritizes x265 and AV1
 tags:
 - 1080p
-- x264
 - Lossy Audio
 - Quality Focused
 upgradesAllowed: true
@@ -34,10 +29,10 @@ custom_formats:
   score: 40
 - name: Disney+
   score: 40
-- name: DVD Remux
-  score: 40
 - name: Movies Anywhere
   score: 40
+- name: AV1
+  score: 35
 - name: Criterion Channel
   score: 30
 - name: HBO Max
@@ -54,6 +49,10 @@ custom_formats:
   score: 30
 - name: SD Quality Tier 1
   score: 30
+- name: x265
+  score: 25
+- name: x265 (1080p)
+  score: 25
 - name: Hulu
   score: 20
 - name: iTunes
@@ -74,13 +73,7 @@ custom_formats:
   score: 10
 - name: Atmos (Missing)
   score: 10
-- name: Blu-ray
-  score: 10
-- name: Special Edition
-  score: 10
 - name: WEBRip
-  score: 10
-- name: x264
   score: 10
 - name: Repack3
   score: 8
@@ -90,7 +83,15 @@ custom_formats:
   score: 6
 - name: 2160p
   score: -9999
+- name: 360p
+  score: -9999
 - name: 3D
+  score: -9999
+- name: 480p
+  score: -9999
+- name: 540p
+  score: -9999
+- name: 576p
   score: -9999
 - name: 720p
   score: -9999
@@ -103,6 +104,8 @@ custom_formats:
 - name: Blu-ray Remux
   score: -9999
 - name: Dolby Vision
+  score: -9999
+- name: Dolby Vision (Without Fallback)
   score: -9999
 - name: Extras
   score: -9999
@@ -124,11 +127,19 @@ custom_formats:
   score: -9999
 - name: SD Bluray Encodes
   score: -9999
+- name: UHD Bluray
+  score: -9999
 - name: Upscaled
   score: -9999
-- name: x265
+- name: VVC
+  score: -9999
+- name: x264
+  score: -9999
+- name: x264 (2160p)
   score: -9999
 - name: x265 (Missing)
+  score: -9999
+- name: Xvid
   score: -9999
 qualities:
 - id: -1
@@ -142,18 +153,8 @@ qualities:
     name: WEBDL-1080p
   - id: 11
     name: WEBRip-1080p
-- id: -2
-  name: SD
-  description: SD Fallbacks
-  qualities:
-  - id: 19
-    name: WEBDL-480p
-  - id: 20
-    name: WEBRip-480p
-  - id: 22
-    name: DVD
-  - id: 24
-    name: SDTV
+  - id: 12
+    name: HDTV-1080p
 upgrade_until:
   id: -1
   name: Transparent capable

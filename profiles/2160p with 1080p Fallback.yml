@@ -1,29 +1,35 @@
-name: 2160p Balanced
-description: "2160p Balanced targets consistent & immutable 2160p **HDR WEB-DLs w/\
-  \ Lossy Audio**. \n- Special considerations are given to **Balanced** groups who\
-  \ prioritize **streaming optimisation** over quality, falling somewhere around a\
-  \ tier 2 WEB-DL. This includes groups like **BHDStudio**, **HONE** and **hallowed**.\n\
-  - If no 2160p WEB-DL can be found, the profile will fall back to the 1080p Quality\
-  \ Profile.\n- Transparent 2160p Encodes (\xE0 la  2160p Quality) are not allowed\
-  \ as fallback since they are comparatively much larger than 2160p WEB-DLs"
+name: 2160p with 1080p Fallback
+description: Prioritizes x265 + av1
 tags:
 - 2160p
 - HDR
-- x264
-- h265
-- Lossy Audio
-- Balanced Focused
+- x265
+- Encode
+- Lossless Audio
+- Quality Focused
 upgradesAllowed: true
 minCustomFormatScore: 0
 upgradeUntilScore: 600
 minScoreIncrement: 1
 custom_formats:
+- name: 2160p Quality Tier 1
+  score: 370
+- name: 2160p Quality Tier 2
+  score: 360
+- name: 2160p Quality Tier 3
+  score: 350
+- name: 2160p Quality Tier 4
+  score: 340
 - name: 2160p
   score: 300
 - name: 2160p Balanced Tier 1
-  score: 250
+  score: 300
 - name: 2160p Balanced Tier 2
+  score: 290
+- name: 2160p Quality Tier 5
   score: 240
+- name: 2160p Quality Tier 6
+  score: 230
 - name: Amazon Prime [2160p]
   score: 160
 - name: Disney+ [2160p]
@@ -132,36 +138,12 @@ custom_formats:
   score: 5
 - name: Unknown Lossless Audio
   score: 5
-- name: Amazon Prime
-  score: 0
-- name: Apple TV+
-  score: 0
-- name: Criterion Channel
-  score: 0
-- name: Disney+
-  score: 0
-- name: HBO Max
-  score: 0
-- name: Hulu
-  score: 0
-- name: iTunes
-  score: 0
-- name: Max
-  score: 0
-- name: Movies Anywhere
-  score: 0
-- name: Netflix
-  score: 0
-- name: Paramount+
-  score: 0
-- name: Peacock
-  score: 0
-- name: Roku
-  score: 0
 - name: SDR
   score: -80
-- name: 2160p Blu-ray Encode
-  score: -9999
+- name: x265
+  score: -150
+- name: x265 (Missing 2160p)
+  score: -150
 - name: 3D
   score: -9999
 - name: 720p
@@ -204,17 +186,19 @@ custom_formats:
   score: -9999
 - name: x264 (2160p)
   score: -9999
-- name: x265
-  score: -9999
 - name: x265 (1080p)
-  score: -9999
-- name: x265 (Missing 2160p)
   score: -9999
 - name: x265 (Missing)
   score: -9999
 qualities:
-- id: 5
-  name: WEBDL-2160p
+- id: -2
+  name: 2160p Transparent
+  description: Indistinguishable from source
+  qualities:
+  - id: 5
+    name: WEBDL-2160p
+  - id: 4
+    name: Bluray-2160p
 - id: -3
   name: 1080p Transparent
   description: Indistinguishable from source
@@ -238,7 +222,7 @@ qualities:
   - id: 24
     name: SDTV
 upgrade_until:
-  id: 5
-  name: WEBDL-2160p
-  description: 4K web download, untouched as released by the streaming service
+  id: -2
+  name: 2160p Transparent
+  description: Indistinguishable from source
 language: must_original
