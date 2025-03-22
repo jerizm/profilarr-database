@@ -6,7 +6,7 @@ tags:
 - Quality Focused
 upgradesAllowed: true
 minCustomFormatScore: 0
-upgradeUntilScore: 320
+upgradeUntilScore: 55
 minScoreIncrement: 1
 custom_formats:
 - name: 1080p Golden Popcorn

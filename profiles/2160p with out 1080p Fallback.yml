@@ -9,7 +9,7 @@ tags:
 - Quality Focused
 upgradesAllowed: true
 minCustomFormatScore: 0
-upgradeUntilScore: 600
+upgradeUntilScore: 250
 minScoreIncrement: 1
 custom_formats:
 - name: 2160p Quality Tier 1

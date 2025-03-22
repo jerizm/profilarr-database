@@ -9,7 +9,7 @@ tags:
 - Quality Focused
 upgradesAllowed: true
 minCustomFormatScore: 0
-upgradeUntilScore: 600
+upgradeUntilScore: 300
 minScoreIncrement: 1
 custom_formats:
 - name: 2160p Quality Tier 1
@@ -193,6 +193,14 @@ custom_formats:
 - name: Xvid
   score: -9999
 qualities:
+- id: -2
+  name: 2160p Transparent
+  description: Indistinguishable from source
+  qualities:
+  - id: 5
+    name: WEBDL-2160p
+  - id: 4
+    name: Bluray-2160p
 - id: -3
   name: 1080p Transparent
   description: Indistinguishable from source
@@ -203,14 +211,6 @@ qualities:
     name: WEBRip-1080p
   - id: 9
     name: WEBDL-1080p
-- id: -2
-  name: 2160p Transparent
-  description: Indistinguishable from source
-  qualities:
-  - id: 5
-    name: WEBDL-2160p
-  - id: 4
-    name: Bluray-2160p
 upgrade_until:
   id: -2
   name: 2160p Transparent
